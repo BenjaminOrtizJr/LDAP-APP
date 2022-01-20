@@ -8,7 +8,10 @@ function App() {
   return (
     <div className="App">
       <h1>LDAP APP</h1>
-      <Form />
+      <Form
+        // submit={addUser}
+        btnText="Add User"
+      />
 
     </div>
   );
