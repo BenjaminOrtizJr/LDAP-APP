@@ -1,16 +1,15 @@
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import axios from 'axios';
+import Form from './components/Form/Form';
 
 function App() {
+
   return (
     <div className="App">
       <h1>LDAP APP</h1>
-      <div className="form">
-        <label>Employee Name:</label>
-        <input type="text" name="employeeName" />
-        <label>Employee Phone Number:</label>
-        <input type="text" name="employeePhone" />
-        <button>Submit</button>
-      </div>
+      <Form />
+
     </div>
   );
 }
