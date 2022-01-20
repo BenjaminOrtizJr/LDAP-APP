@@ -27,7 +27,7 @@ const Form = (props) => {
                     onChange={handleChange}
                 />
                 <input
-                    type="email"
+                    type="text"
                     name="user_email"
                     placeholder="Enter your email"
                     value={inputs.user_email}
