@@ -4,7 +4,7 @@ import './Form.css';
 const Form = (props) => {
 
     const initInputs = { user_name: props.user_name || "", user_email: props.user_email || "" };
-    const [inputs, setInputs] = useState(initInputs);
+    const [inputs, setInputs] = useState(initInputs)
 
     const handleChange = (e) => {
         const { name, value } = e.target
@@ -12,7 +12,7 @@ const Form = (props) => {
     }
 
     const handleSubmit = () => {
-        props.submit(inputs, props.user_id)
+        props.submit(inputs, props.id)
         setInputs(initInputs)
     }
 
@@ -27,7 +27,7 @@ const Form = (props) => {
                     onChange={handleChange}
                 />
                 <input
-                    type="text"
+                    type="email"
                     name="user_email"
                     placeholder="Enter your email"
                     value={inputs.user_email}

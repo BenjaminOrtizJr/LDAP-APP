@@ -4,7 +4,7 @@ const morgan = require('morgan');
 const bodyParser = require("body-parser");
 const mysql = require('mysql2');
 const cors = require('cors');
-const PORT = 3001;
+const PORT = 8000;
 
 // Middleware
 app.use(express.json());
@@ -31,7 +31,7 @@ db.connect((err, result) => {
 
 // Get
 app.get("/getUsers", (req, res) => {
-    let sql = "SELECT * FROM ldap_db.user_info";
+    const sql = "SELECT * FROM ldap_db.user_info";
     db.query(sql, (err, result) => {
         if (err) {
             throw (err);
@@ -42,7 +42,7 @@ app.get("/getUsers", (req, res) => {
 });
 
 // Post
-app.post("addUser", (req, res) => {
+app.post("/addUser", (req, res) => {
     let sql = "INSERT INTO ldap_db.user_info SET ?";
     let post = {
         user_name: req.body.user_name,

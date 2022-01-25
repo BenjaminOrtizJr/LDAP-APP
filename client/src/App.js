@@ -8,22 +8,22 @@ function App() {
   const [users, setUsers] = useState([])
 
   const getUsers = () => {
-    axios.get("http://localhost:3001/getUsers")
+    axios.get("http://localhost:8000/getUsers")
       .then(res => setUsers(res.data))
       .catch(err => console.log(err))
   }
 
   const addUser = (newUser) => {
-    axios.post("http://localhost:3001/addUser", newUser)
+    axios.post("http://localhost:8000/addUser", newUser)
       .then(res => {
         setUsers(prevUsers => [...prevUsers, res.data])
-        console.log(res.data)
+        // console.log(res.data)
       })
     .catch(err => console.log(err))
   }
 
   const deleteUser = (user_id) => {
-    axios.delete(`http://localhost:3001/deleteUser/${user_id}`)
+    axios.delete(`http://localhost:8000/delete/${user_id}`)
       .then(res => {
         setUsers(prevUsers => prevUsers.filter(user => user.id !== user_id))
       })
@@ -31,7 +31,7 @@ function App() {
   }
 
   const editUser = (updates, user_id) => {
-    axios.put(`http://localhost:3001/edit/${user_id}`, updates)
+    axios.put(`http://localhost:8000/edit/${user_id}`, updates)
       .then(res => {
         setUsers(prevUsers => prevUsers.map(user => user.id
         !== user_id ? user : res.data))
