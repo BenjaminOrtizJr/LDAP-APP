@@ -1,9 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Router, Link } from 'react-router-dom';
 import './Nav.css';
 
 const Nav = () => {
-    return <div className="nav-container">
+  return <div className="nav-container">
          <ul className="nav__list-container">
             <li>
                 <Link style={{ textDecoration: "none", color: "black" }} to="/">Home</Link>
@@ -11,7 +11,7 @@ const Nav = () => {
             <li>
               <Link style={{ textDecoration: "none", color: "black" }} to="/users">Users</Link>
             </li>
-          </ul>
+        </ul>
     </div>;
 };
 
