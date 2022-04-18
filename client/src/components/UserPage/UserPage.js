@@ -2,6 +2,8 @@ import React from 'react';
 import FormList from '../FormList/FormList';
 
 const UserPage = (props) => {
+
+  const {deleteUser, editUser, users} = props
     return <div className="user-page">
         <h1 className="user-page-title">User List</h1>
         {

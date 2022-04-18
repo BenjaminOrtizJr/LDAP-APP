@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Router, Switch, Route } from 'react-router-dom';
+// import { Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import axios from 'axios';
 import Form from './components/Form/Form';
-// import FormList from './components/FormList/FormList';
-import UserPage from './components/UserPage/UserPage'
+import FormList from './components/FormList/FormList';
+// import UserPage from './components/UserPage/UserPage'
 import Nav from './components/Nav/Nav'
 
 function App() {
@@ -47,22 +47,14 @@ function App() {
   }, [])
 
   return (
-    <Router>
       <div className="App">
-      
       <Nav />
         <h1>LDAP APP</h1>
-        <Switch>
-          <Route path="/">
-            <Form
-              submit={addUser}
-              btnText="Add User"
-            />
-          </Route>
-          <Route path="/users">
-            <UserPage />
-          </Route>
-      {/* {
+          <Form
+            submit={addUser}
+            btnText="Add User"
+          />     
+      {
         users.map(user =>
           <FormList
             {...user}
@@ -70,10 +62,8 @@ function App() {
             deleteUser={deleteUser}
             editUser={editUser}
         />)
-      } */}
-        </Switch>
+      }
       </div>
-    </Router>
   );
 }
 
