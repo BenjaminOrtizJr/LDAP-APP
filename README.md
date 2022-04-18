@@ -1,5 +1,5 @@
 # LDAP-APP
-React App, Express, MySQL DB
+MySQL - Express - React - Node
 
 Client Start:  npm start
 Server Start: npm run devStart
