@@ -1,6 +1,9 @@
 import React, {useState} from 'react';
 import './FormList.css';
 import Form from '../Form/Form';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import EditIcon from '@mui/icons-material/Edit';
+import CloseIcon from '@mui/icons-material/Close';
 
 const FormList = (props) => {
 
@@ -10,15 +13,18 @@ const FormList = (props) => {
     return (
         <div className="formList__container">
             {!editToggle ?
-                <>
-                    <h3>{user_name}</h3>
-                    <h3>{user_email}</h3>
-                    <button className="formList__delete-button" onClick={() => props.deleteUser(id)}>Delete</button>
-                    <button className="formList__edit-button" onClick={() => setEditToggle(prevToggle => !prevToggle)}>
-                    Edit </button>
+                <>  
+                    <h3 className="username">{user_name}</h3>
+                    <h3 className="user-email">{user_email}</h3>
+                    <div className="button-container">
+                        <EditIcon style={{ color: "blue" }} className="formList__edit-button" onClick={() => setEditToggle(prevToggle => !prevToggle)} />
+                        <DeleteForeverIcon style={{ color: "red" }} className="formList__delete-button" onClick={() => props.deleteUser(id)} />  
+                    </div>
+                    <hr/>
                 </>
             :
                 <>
+                    <CloseIcon className="formList__close-button" onClick={() => setEditToggle(prevToggle => !prevToggle)} />
                     <Form
                         user_name={user_name}
                         user_email={user_email}
@@ -26,9 +32,7 @@ const FormList = (props) => {
                         id={id}
                         submit={props.editUser}
                     />
-                    <button className="formList__close-button" onClick={() => setEditToggle(prevToggle => !prevToggle)}>
-                        Close
-                    </button>
+                    <hr />
                 </>
             }
         </div>

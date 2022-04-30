@@ -1,0 +1,14 @@
+/* Mobile View */
+
+@media (max-width: 412px) {
+
+    .formList__container > h3 {
+        font-size: 18px;
+    }
+
+    .formList__close-button {
+        float: right;
+        color: rgb(141, 17, 17);
+    }
+
+}

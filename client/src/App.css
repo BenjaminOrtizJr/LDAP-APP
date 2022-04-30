@@ -1,0 +1,29 @@
+/* Mobile View */
+
+@media (max-width: 412px) {
+    
+    .App {
+        display: block;
+        margin: 0;
+        padding: 0;
+    }
+
+    .view-container {
+        display: none;
+    }
+
+    .App > h1 {
+        font-size: 36px;
+    }
+
+    .section-heading > h2 {
+        font-size: 26px;
+        margin-top: 10px;
+    }
+
+    .App > h2 {
+        font-size: 26px;
+        margin-top: 10px;
+    }
+
+}

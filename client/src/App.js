@@ -48,12 +48,18 @@ function App() {
       <h1>CRUD App with Hooks</h1>
       <div className="section-heading">
         <h2>Add User</h2>
-        <h2>View Users</h2>
       </div>
           <Form
             submit={addUser}
             btnText="Add User"
-          />     
+      />
+      <h2>View Users</h2>
+      <div className="view-container">
+        <h3>Name</h3>
+        <h3>Username</h3>
+        <h3>Actions</h3>
+      </div>
+      <hr />
       {
         users.map(user =>
           <FormList
