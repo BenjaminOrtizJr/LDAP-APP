@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from 'react';
-// import { Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import axios from 'axios';
 import Form from './components/Form/Form';
 import FormList from './components/FormList/FormList';
-// import UserPage from './components/UserPage/UserPage'
-import Nav from './components/Nav/Nav'
 
 function App() {
   const [users, setUsers] = useState([])
@@ -48,8 +45,11 @@ function App() {
 
   return (
       <div className="App">
-      <Nav />
-        <h1>LDAP APP</h1>
+      <h1>CRUD App with Hooks</h1>
+      <div className="section-heading">
+        <h2>Add User</h2>
+        <h2>View Users</h2>
+      </div>
           <Form
             submit={addUser}
             btnText="Add User"

@@ -35,6 +35,11 @@ const Form = (props) => {
                 />
                 <button>{props.btnText}</button>
             </form>
+            <div className="view-conainer">
+                <h3>Name</h3>
+                <h3>Username</h3>
+                <h3>Actions</h3>
+            </div>
         </div>
     )
 }

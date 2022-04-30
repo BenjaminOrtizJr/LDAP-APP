@@ -11,8 +11,8 @@ const FormList = (props) => {
         <div className="formList__container">
             {!editToggle ?
                 <>
-                    <h3>Name: {user_name}</h3>
-                    <h3>Email: {user_email}</h3>
+                    <h3>{user_name}</h3>
+                    <h3>{user_email}</h3>
                     <button className="formList__delete-button" onClick={() => props.deleteUser(id)}>Delete</button>
                     <button className="formList__edit-button" onClick={() => setEditToggle(prevToggle => !prevToggle)}>
                     Edit </button>
