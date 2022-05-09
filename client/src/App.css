@@ -1,6 +1,6 @@
 /* Mobile View */
 
-@media (max-width: 412px) {
+@media screen and (max-width: 1023px) {
     
     .App {
         display: block;
@@ -26,4 +26,69 @@
         margin-top: 10px;
     }
 
+}
+
+/* Tablet View */
+
+@media screen and (min-width: 1024px) {
+
+    .App {
+        display: flex;
+        justify-content: space-around;
+        padding: 0;
+    }
+
+    .form-wrapper > h1 {
+        font-size: 36px;
+    }
+
+    .section-heading {
+        margin-top: 3em;
+    }
+    
+    .view-wrapper {
+        margin-top: 5.5em;
+        margin-right: 2em;
+    }
+
+    .view-container {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .view-container > h3 {
+        font-size: 14px;
+    }
+}
+
+/* Desktop View */
+
+@media screen and (min-width: 1280px) {
+
+    .App {
+        max-width: 1400px;
+        margin-right: -0;
+        margin-left: 0;
+    }
+    
+    .form-wrapper > h1 {
+        font-size: 50px;
+    }
+
+    .section-heading > h2 {
+        font-size: 48px;
+    }
+
+    .view-wrapper {
+        margin-top: 6.6em;
+        width: 600px;
+    }
+
+    .view-wrapper > h2 {
+        font-size: 48px;
+    }
+
+    .view-container > h3 {
+        font-size: 24px;
+    }
 }

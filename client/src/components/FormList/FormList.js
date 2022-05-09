@@ -13,12 +13,13 @@ const FormList = (props) => {
     return (
         <div className="formList__container">
             {!editToggle ?
-                <>  
+                <>  <div className="data-view">
                     <h3 className="username">{user_name}</h3>
                     <h3 className="user-email">{user_email}</h3>
                     <div className="button-container">
-                        <EditIcon style={{ color: "blue" }} className="formList__edit-button" onClick={() => setEditToggle(prevToggle => !prevToggle)} />
-                        <DeleteForeverIcon style={{ color: "red" }} className="formList__delete-button" onClick={() => props.deleteUser(id)} />  
+                        <EditIcon style={{ color: "blue", fontSize: 20 }} className="formList__edit-button" onClick={() => setEditToggle(prevToggle => !prevToggle)} />
+                        <DeleteForeverIcon style={{ color: "red", fontSize: 20 }} className="formList__delete-button" onClick={() => props.deleteUser(id)} />  
+                    </div>
                     </div>
                     <hr/>
                 </>

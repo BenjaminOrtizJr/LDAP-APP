@@ -1,6 +1,6 @@
 /* Mobile View */
 
-@media (max-width: 412px) {
+@media screen and (max-width: 1023px) {
    
     .form__wrapper-inputs {
         display: flex;
@@ -13,7 +13,7 @@
         margin: 5px;
         border-radius: 5px;
         outline: none;
-        border: 0.1 solid black;
+        border: 0.1px solid black;
     }
 
     .form__wrapper-inputs > button {
@@ -24,5 +24,53 @@
         color: white;
         border-radius: 5px;
         
+    }
+}
+
+/* Tablet View */
+
+@media screen and (min-width: 1024px) {
+
+    .form__wrapper-inputs {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form__wrapper-inputs > input {
+        height: 40px;
+        max-width: 380px;
+        margin: 5px;
+        border-radius: 5px;
+        outline: none;
+        border: 0.1px solid black;
+    }
+
+    .form__wrapper-inputs > button {
+        width: 100px;
+        margin: 5px;
+        height: 40px;
+        background-color: rgb(46, 46, 207);
+        color: white;
+        border-radius: 5px;
+        
+    }
+}
+
+/* Desktop View */
+
+@media screen and (min-width: 1280px) {
+    
+    .form__wrapper-inputs > input {
+        height: 70px;
+        max-width: 600px;
+    }
+
+    .form__wrapper-inputs > button {
+        width: 140px;
+        margin: 5px;
+        height: 60px;
+        background-color: rgb(46, 46, 207);
+        color: white;
+        border-radius: 5px;
     }
 }

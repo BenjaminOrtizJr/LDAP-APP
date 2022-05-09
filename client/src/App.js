@@ -45,15 +45,18 @@ function App() {
 
   return (
       <div className="App">
-      <h1>CRUD App with Hooks</h1>
+      <div className="form-wrapper">
+        <h1>CRUD App with Hooks</h1>
       <div className="section-heading">
         <h2>Add User</h2>
       </div>
-          <Form
-            submit={addUser}
-            btnText="Add User"
-      />
-      <h2>View Users</h2>
+        <Form
+          submit={addUser}
+          btnText="Add User"
+        />
+      </div>
+      <div className="view-wrapper">
+        <h2>View Users</h2>
       <div className="view-container">
         <h3>Name</h3>
         <h3>Username</h3>
@@ -68,7 +71,8 @@ function App() {
             deleteUser={deleteUser}
             editUser={editUser}
         />)
-      }
+        }
+        </div>
       </div>
   );
 }
