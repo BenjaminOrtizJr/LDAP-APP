@@ -14,7 +14,6 @@
         float: right;
         color: rgb(141, 17, 17);
     }
-
 }
 
 
@@ -28,11 +27,11 @@
 
     .data-view {
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-between;
     }
 
      h3 {
-        font-size: 10px;
+        font-size: 12px;
     }
 
     .formList__close-button {
@@ -47,8 +46,8 @@
 
      .data-view {
         display: flex;
-        justify-content: space-evenly;
-    }
+        justify-content: space-between;
+     }
 
     h3 {
         font-size: 18px;
@@ -58,5 +57,4 @@
         float: right;
         color: rgb(141, 17, 17);
     }
-
 }

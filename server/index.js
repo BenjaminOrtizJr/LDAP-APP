@@ -57,7 +57,7 @@ app.post("/addUser", (req, res) => {
     });
 });
 
-// Update
+// Put
 app.put("/edit/:user_id", (req, res) => {
     let updateUserName = req.body.user_name;
     let updateUserEmail = req.body.user_email;
