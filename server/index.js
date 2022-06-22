@@ -33,7 +33,7 @@ db.connect((err, result) => {
 
 // Get
 app.get("/getUsers", (req, res) => {
-    const sql = "SELECT * FROM ldap_db_deployed.user_info";
+    const sql = "SELECT * FROM ldap_db.user_info";
     db.query(sql, (err, result) => {
         if (err) {
             throw (err);
@@ -45,7 +45,7 @@ app.get("/getUsers", (req, res) => {
 
 // Post
 app.post("/addUser", (req, res) => {
-    let sql = "INSERT INTO ldap_db_deployed.user_info SET ?";
+    let sql = "INSERT INTO ldap_db.user_info SET ?";
     let post = {
         user_name: req.body.user_name,
         user_email: req.body.user_email
@@ -63,7 +63,7 @@ app.post("/addUser", (req, res) => {
 app.put("/edit/:user_id", (req, res) => {
     let updateUserName = req.body.user_name;
     let updateUserEmail = req.body.user_email;
-    let sql = `UPDATE ldap_db_deployed.user_info SET
+    let sql = `UPDATE ldap_db.user_info SET
     user_name = '${updateUserName}',
     user_email = '${updateUserEmail}'
         WHERE id = '${req.params.user_id}'`
@@ -78,7 +78,7 @@ app.put("/edit/:user_id", (req, res) => {
 
 // Delete
 app.delete("/delete/:user_id", (req, res) => {
-    let sql = `DELETE FROM ldap_db_deployed.user_info WHERE id = '${req.params.user_id}'`
+    let sql = `DELETE FROM ldap_db.user_info WHERE id = '${req.params.user_id}'`
     db.query(sql, (err, result) => {
         if (err) {
             throw (err);
@@ -90,7 +90,7 @@ app.delete("/delete/:user_id", (req, res) => {
 
 // Server Listen
 app.listen(process.env.PORT || PORT, () => {
-    console.log(`Running server on port ${PORT}`)
+    console.log(`Running this server on port ${PORT}`)
 });
 
 // test 
