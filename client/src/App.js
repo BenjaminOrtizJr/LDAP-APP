@@ -8,13 +8,13 @@ function App() {
   const [users, setUsers] = useState([])
 
   const getUsers = () => {
-    axios.get("http://localhost:8000/getUsers")
+    axios.get("https://ldap-app.herokuapp.com/getUsers")
       .then(res => setUsers(res.data))
       .catch(err => console.log(err))
   }
 
   const addUser = (newUser) => {
-    axios.post("http://localhost:8000/addUser", newUser)
+    axios.post("https://ldap-app.herokuapp.com/addUser", newUser)
       .then(res => {
         setUsers(prevUsers => [...prevUsers, res.data])
         // console.log(res.data)
@@ -23,7 +23,7 @@ function App() {
   }
 
   const deleteUser = (user_id) => {
-    axios.delete(`http://localhost:8000/delete/${user_id}`)
+    axios.delete(`https://ldap-app.herokuapp.com/delete/${user_id}`)
       .then(res => {
         setUsers(prevUsers => prevUsers.filter(user => user.id !== user_id))
       })
@@ -31,7 +31,7 @@ function App() {
   }
 
   const editUser = (updates, user_id) => {
-    axios.put(`http://localhost:8000/edit/${user_id}`, updates)
+    axios.put(`https://ldap-app.herokuapp.com/edit/${user_id}`, updates)
       .then(res => {
         setUsers(prevUsers => prevUsers.map(user => user.id
         !== user_id ? user : res.data))

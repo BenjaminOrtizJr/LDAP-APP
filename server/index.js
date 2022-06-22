@@ -14,12 +14,14 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 // Database
 const db = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "silent84",
-    database: "ldap_db"
+    host: "us-cdbr-east-05.cleardb.net",
+    user: "be235a0bb1568a",
+    password: "9264021a",
+    database: "heroku_c7cc01f0e9582af"
 });
 
+// mysql://be235a0bb1568a:9264021a@us-cdbr-east-05.cleardb.net/heroku_c7cc01f0e9582af?reconnect=true
+//             user      |password|          host             |        database      |
 db.connect((err, result) => {
     if (err) {
         console.log(err);
@@ -87,6 +89,8 @@ app.delete("/delete/:user_id", (req, res) => {
 });
 
 // Server Listen
-app.listen(PORT, () => {
+app.listen(process.env.PORT || PORT, () => {
     console.log(`Running server on port ${PORT}`)
 });
+
+// test 
