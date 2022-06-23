@@ -15,12 +15,12 @@ app.use(bodyParser.urlencoded({ extended: true }))
 // Database
 const db = mysql.createConnection({
     host: "us-cdbr-east-05.cleardb.net",
-    user: "be235a0bb1568a",
-    password: "9264021a",
-    database: "heroku_c7cc01f0e9582af"
+    user: "b86f0098b3daed",
+    password: "2ba0787a",
+    database: "heroku_91f3632df2b4c0d"
 });
 
-// mysql://be235a0bb1568a:9264021a@us-cdbr-east-05.cleardb.net/heroku_c7cc01f0e9582af?reconnect=true
+// mysql://b86f0098b3daed:2ba0787a@us-cdbr-east-05.cleardb.net/heroku_91f3632df2b4c0d?reconnect=true
 //             user      |password|          host             |        database      |
 db.connect((err, result) => {
     if (err) {
@@ -33,7 +33,7 @@ db.connect((err, result) => {
 
 // Get
 app.get("/getUsers", (req, res) => {
-    const sql = "SELECT * FROM ldap_db.user_info";
+    const sql = "SELECT * FROM heroku_91f3632df2b4c0d.user_info";
     db.query(sql, (err, result) => {
         if (err) {
             throw (err);
@@ -45,7 +45,7 @@ app.get("/getUsers", (req, res) => {
 
 // Post
 app.post("/addUser", (req, res) => {
-    let sql = "INSERT INTO ldap_db.user_info SET ?";
+    let sql = "INSERT INTO heroku_91f3632df2b4c0d.user_info SET ?";
     let post = {
         user_name: req.body.user_name,
         user_email: req.body.user_email
@@ -63,7 +63,7 @@ app.post("/addUser", (req, res) => {
 app.put("/edit/:user_id", (req, res) => {
     let updateUserName = req.body.user_name;
     let updateUserEmail = req.body.user_email;
-    let sql = `UPDATE ldap_db.user_info SET
+    let sql = `UPDATE heroku_91f3632df2b4c0d.user_info SET
     user_name = '${updateUserName}',
     user_email = '${updateUserEmail}'
         WHERE id = '${req.params.user_id}'`
@@ -78,7 +78,7 @@ app.put("/edit/:user_id", (req, res) => {
 
 // Delete
 app.delete("/delete/:user_id", (req, res) => {
-    let sql = `DELETE FROM ldap_db.user_info WHERE id = '${req.params.user_id}'`
+    let sql = `DELETE FROM heroku_91f3632df2b4c0d.user_info WHERE id = '${req.params.user_id}'`
     db.query(sql, (err, result) => {
         if (err) {
             throw (err);
