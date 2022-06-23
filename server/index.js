@@ -4,7 +4,7 @@ const morgan = require('morgan');
 const bodyParser = require("body-parser");
 const mysql = require('mysql2');
 const cors = require('cors');
-const PORT = 8000;
+const PORT = "https://ldap-app.herokuapp.com/"
 
 // Middleware
 app.use(express.json());
@@ -22,6 +22,7 @@ const db = mysql.createConnection({
 
 // mysql://b86f0098b3daed:2ba0787a@us-cdbr-east-05.cleardb.net/heroku_91f3632df2b4c0d?reconnect=true
 //             user      |password|          host             |        database      |
+
 db.connect((err, result) => {
     if (err) {
         console.log(err);
@@ -89,7 +90,7 @@ app.delete("/delete/:user_id", (req, res) => {
 });
 
 // Server Listen
-app.listen(process.env.PORT || PORT, () => {
+app.listen(process.env.PORT, () => {
     console.log(`Running this server on port ${PORT}`)
 });
 
